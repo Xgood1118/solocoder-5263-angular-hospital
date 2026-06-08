@@ -1,0 +1,1 @@
+后端 mvn package 还是 8 处编译错误：`org.springframework.transaction.annotation` 程序包找不到，`@Transactional` 符号未定义。后端起不来，没法做端到端验证。检查修复一下。
