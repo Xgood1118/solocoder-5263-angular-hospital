@@ -1,0 +1,5 @@
+第一轮跑起来后端直接编译失败。`mvn package` 跑 `org.springframework.transaction.annotation.Transactional` 报"找不到符号"——pom.xml 里压根没引 spring-tx 相关的依赖（既没 spring-boot-starter-data-jpa，也没 spring-tx，也没 jdbc）。AppointmentService 用了 4 次 @Transactional、MedicalRecordService 用了 2 次，加起来 6 处编译错。`mvn package` 退出码非 0，backend/target/ 都没生成 jar，整个后端起不来；前端 `npm run build --configuration production` 也因为初始 bundle 1.25 MB 超过 angular.json budgets 里 1.00 MB 的硬限制报错失败，没法 build。
+
+加一下 spring-tx 依赖（推荐 spring-boot-starter-data-jpa 顺带把 JPA 也接上，或单独加 org.springframework:spring-tx），然后让后端能 mvn package 出 jar，mvn 启动后能 curl 到 /api/departments /api/doctors 之类的端点；前端 build 把 angular.json budgets.initial.maximum 调大到 2 MB（或者改用按需懒加载把 vendor.js 拆出去），让 ng build 退出码 0，能起 dev server。
+
+检查修复一下。
