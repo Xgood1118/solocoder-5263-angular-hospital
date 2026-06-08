@@ -1,0 +1,37 @@
+需求：Angular + Java SpringBoot 医院预约挂号系统，科室 / 医生 / 排班 / 预约 / 病历 / 提醒 / 回访。
+
+背景：调研了三甲医院流程后想做 MVP，验证"号源池"和"过号 / 改签 / 退号"的业务逻辑。要支持患者端（预约、查询、取消、评价）和医生端（看诊、写病历、停诊通知）。技术上 Angular + Spring Boot，数据存内存 + JSON 持久化。
+
+核心功能：
+- 科室管理：一级科室（大内科 / 大外科 / 妇产 / 儿科）、二级科室（心内 / 消化 / 神内）、科室介绍
+- 医生管理：姓名、职称、所属科室、简介、出诊日
+- 排班：医生按周排班（周一出诊 / 周三上午出诊 / 等），号源按时间段（上午 30 个、下午 20 个）
+- 预约：患者选科室 → 选医生 → 选时段 → 选具体时间点 → 确认；同一时段一人约
+- 取消 / 改签：就诊前 24h 可免费取消；改签需要先取消原预约再约新时段
+- 病历：医生端可写主诉、现病史、诊断、医嘱（仅该医生 + 患者可见）
+- 提醒：就诊前 1 天、当天 1h 短信 / 站内信提醒
+- 评价：就诊完成后 7 天内可评价医生 1-5 星
+- 回访：医生看完诊可标记"需要回访"，3 天后自动提醒医生
+
+涉及模块：
+- `backend/src/main/java/com/hospital/`：controller / service / repository / entity
+- `backend/scheduling/`：排班规则引擎、号源生成
+- `backend/notification/`：提醒队列、定时任务
+- `frontend/src/app/`：patient、doctor、admin 三个模块的 components / services
+- `frontend/src/app/shared/`：Calendar、TimeSlotPicker、DoctorCard
+- `frontend/src/app/core/`：HTTP 拦截器、guards、auth
+
+注意事项：
+- 号源是高并发竞争点：同一时段被两个人同时点预约，乐观锁 UPDATE 拿号源（WHERE remaining > 0）
+- 排班号源按周预生成（scheduleService 提前 7 天生成未来 7 天的号源池），不要按需实时生成
+- 取消 / 改签要校验时间窗口（> 24h 才能取消），过期取消要么走退款流程要么不允许
+- 病历隐私：医生 A 写的病历医生 B 看不到（除非会诊授权），前端 API 也要按角色过滤
+- 改签要"原子"：要么取消成功 + 预约新时段成功，要么都失败回滚
+- 医生停诊要批量通知已预约患者 + 自动退款（mock 退款），不能只挂个通知
+- 短信发送失败要重试，不能丢；用 mock 的同时记录到通知日志方便排查
+- Angular Material 的 DateAdapter 适配中文 locale，'zh-CN'
+- RxJS 状态用 BehaviorSubject + distinctUntilChanged 避免重复请求
+- 后端 exception handler 统一返回 RFC 7807 Problem Details 格式
+- Spring 事务：跨服务调用（预约 + 发提醒）不要放一个事务里（分布式事务复杂），用本地事务 + 消息队列异步
+- 病历文件 / 处方图片存对象存储（mock 用本地 + 静态 URL）
+- Spring Security 配置 RBAC：患者 / 医生 / 管理员三种角色

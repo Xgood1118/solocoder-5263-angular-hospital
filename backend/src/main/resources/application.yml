@@ -1,0 +1,43 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: hospital-appointment-system
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    serialization:
+      write-dates-as-timestamps: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+
+app:
+  jwt:
+    secret: hospital-appointment-system-jwt-secret-key-for-development-only-2024
+    expiration: 86400000
+  data:
+    storage-path: data/
+  appointment:
+    cancel-hours-before: 24
+    review-days-after: 7
+    follow-up-days: 3
+  scheduling:
+    pre-generate-days: 7
+    default-morning-slots: 30
+    default-afternoon-slots: 20
+  notification:
+    retry-max-attempts: 3
+    retry-delay-seconds: 300
+    remind-day-before: true
+    remind-hour-before: 1
+
+logging:
+  level:
+    com.hospital: DEBUG
+    org.springframework.security: INFO
