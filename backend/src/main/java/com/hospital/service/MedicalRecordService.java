@@ -15,7 +15,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -74,7 +73,6 @@ public class MedicalRecordService {
         return record;
     }
 
-    @Transactional
     public MedicalRecord createRecord(MedicalRecordRequest request, Long doctorId) {
         Appointment appointment = appointmentRepository.findById(request.getAppointmentId())
                 .orElseThrow(() -> new ResourceNotFoundException("Appointment", request.getAppointmentId()));
@@ -119,7 +117,6 @@ public class MedicalRecordService {
         return saved;
     }
 
-    @Transactional
     public MedicalRecord updateRecord(Long id, MedicalRecordRequest request, Long doctorId) {
         MedicalRecord record = getRecordById(id, doctorId, "DOCTOR");
 

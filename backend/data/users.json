@@ -1,0 +1,73 @@
+[ {
+  "id" : 1,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 2, 832522200 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 2, 832522200 ],
+  "username" : "admin",
+  "password" : "$2a$10$kRXfYOJnW0yIcAawDQAZseZl8XOdYWsoxmyNETQ.O5XgEJhzjs0/K",
+  "name" : "系统管理员",
+  "phone" : "13800000000",
+  "email" : "admin@hospital.com",
+  "idCard" : null,
+  "roles" : [ "ADMIN" ],
+  "enabled" : true
+}, {
+  "id" : 2,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 153468200 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 153468200 ],
+  "username" : "doctor1",
+  "password" : "$2a$10$oIgo9P1CkcG16lr9CQEmROtY.qrCGCc8pFTNGRqrvkg1XL7l9c2qm",
+  "name" : "张医生",
+  "phone" : "13800000001",
+  "email" : "zhang@hospital.com",
+  "idCard" : null,
+  "roles" : [ "DOCTOR" ],
+  "enabled" : true
+}, {
+  "id" : 3,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 325097500 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 325097500 ],
+  "username" : "doctor2",
+  "password" : "$2a$10$aiXzzY98l0fKI3g5j4R0Luqf9wyqOKrmd2ASLH4qWox3aV.owf36i",
+  "name" : "李医生",
+  "phone" : "13800000002",
+  "email" : "li@hospital.com",
+  "idCard" : null,
+  "roles" : [ "DOCTOR" ],
+  "enabled" : true
+}, {
+  "id" : 4,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 496187200 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 496187200 ],
+  "username" : "doctor3",
+  "password" : "$2a$10$Rno42aQTsrOww7WpjsmEzeTo3orbj4.r/M1WtPk2h6eL9r/0/LGqq",
+  "name" : "王医生",
+  "phone" : "13800000003",
+  "email" : "wang@hospital.com",
+  "idCard" : null,
+  "roles" : [ "DOCTOR" ],
+  "enabled" : true
+}, {
+  "id" : 5,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 629752500 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 629752500 ],
+  "username" : "patient1",
+  "password" : "$2a$10$YrG7cg0n/unVqhYNnjoWN.zcbvlE.5lvH5x9Kwy8cYafZ170iLcWi",
+  "name" : "患者小明",
+  "phone" : "13900000001",
+  "email" : "patient1@example.com",
+  "idCard" : "110101199001011234",
+  "roles" : [ "PATIENT" ],
+  "enabled" : true
+}, {
+  "id" : 6,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 775900800 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 775900800 ],
+  "username" : "patient2",
+  "password" : "$2a$10$03M/loUe4XAVSYr0fR4xUOlGJK4TNmyEAT3N2u1u/EPE9HBqKevHy",
+  "name" : "患者小红",
+  "phone" : "13900000002",
+  "email" : "patient2@example.com",
+  "idCard" : "110101199002021234",
+  "roles" : [ "PATIENT" ],
+  "enabled" : true
+} ]

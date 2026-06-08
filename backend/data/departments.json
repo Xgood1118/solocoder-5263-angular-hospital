@@ -1,0 +1,91 @@
+[ {
+  "id" : 1,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 784438200 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 784438200 ],
+  "name" : "大内科",
+  "code" : "INTERNAL",
+  "description" : "内科综合科室，涵盖心内、消化、神内等专业",
+  "parentId" : null,
+  "level" : 1,
+  "sortOrder" : 1
+}, {
+  "id" : 2,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 789948900 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 789948900 ],
+  "name" : "大外科",
+  "code" : "SURGERY",
+  "description" : "外科综合科室，涵盖普外、骨外、神外等专业",
+  "parentId" : null,
+  "level" : 1,
+  "sortOrder" : 2
+}, {
+  "id" : 3,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 791962100 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 791962100 ],
+  "name" : "妇产科",
+  "code" : "OBSTETRICS",
+  "description" : "妇科、产科、生殖医学",
+  "parentId" : null,
+  "level" : 1,
+  "sortOrder" : 3
+}, {
+  "id" : 4,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 795955100 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 795955100 ],
+  "name" : "儿科",
+  "code" : "PEDIATRICS",
+  "description" : "儿童常见病、多发病诊治",
+  "parentId" : null,
+  "level" : 1,
+  "sortOrder" : 4
+}, {
+  "id" : 5,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 796949200 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 796949200 ],
+  "name" : "心血管内科",
+  "code" : "CARDIOLOGY",
+  "description" : "冠心病、高血压、心律失常等心血管疾病诊治",
+  "parentId" : 1,
+  "level" : 2,
+  "sortOrder" : 1
+}, {
+  "id" : 6,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 798952400 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 798952400 ],
+  "name" : "消化内科",
+  "code" : "GASTROENTEROLOGY",
+  "description" : "胃肠道、肝胆胰疾病诊治",
+  "parentId" : 1,
+  "level" : 2,
+  "sortOrder" : 2
+}, {
+  "id" : 7,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 802950000 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 802950000 ],
+  "name" : "神经内科",
+  "code" : "NEUROLOGY",
+  "description" : "脑血管病、癫痫、帕金森等神经系统疾病",
+  "parentId" : 1,
+  "level" : 2,
+  "sortOrder" : 3
+}, {
+  "id" : 8,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 805469800 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 805469800 ],
+  "name" : "普通外科",
+  "code" : "GENERAL_SURGERY",
+  "description" : "胃肠道、甲状腺、乳腺等外科疾病",
+  "parentId" : 2,
+  "level" : 2,
+  "sortOrder" : 1
+}, {
+  "id" : 9,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 807479800 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 807479800 ],
+  "name" : "骨科",
+  "code" : "ORTHOPEDICS",
+  "description" : "骨折、关节疾病、脊柱疾病",
+  "parentId" : 2,
+  "level" : 2,
+  "sortOrder" : 2
+} ]

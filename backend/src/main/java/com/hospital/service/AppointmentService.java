@@ -19,7 +19,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -68,7 +67,6 @@ public class AppointmentService {
                 .orElseThrow(() -> new ResourceNotFoundException("Appointment not found: " + appointmentNo));
     }
 
-    @Transactional
     public Appointment createAppointment(AppointmentRequest request) {
         appointmentLock.lock();
         try {
@@ -139,7 +137,6 @@ public class AppointmentService {
         }
     }
 
-    @Transactional
     public Appointment cancelAppointment(Long appointmentId) {
         Appointment appointment = getAppointmentById(appointmentId);
 
@@ -167,7 +164,6 @@ public class AppointmentService {
         return saved;
     }
 
-    @Transactional
     public Appointment rescheduleAppointment(RescheduleRequest request) {
         appointmentLock.lock();
         try {
@@ -254,7 +250,6 @@ public class AppointmentService {
         }
     }
 
-    @Transactional
     public Appointment completeAppointment(Long appointmentId) {
         Appointment appointment = getAppointmentById(appointmentId);
 
@@ -267,7 +262,6 @@ public class AppointmentService {
         return appointmentRepository.save(appointment);
     }
 
-    @Transactional
     public Appointment markAsMissed(Long appointmentId) {
         Appointment appointment = getAppointmentById(appointmentId);
 

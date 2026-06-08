@@ -1,0 +1,40 @@
+[ {
+  "id" : 1,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 812469900 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 812469900 ],
+  "userId" : 2,
+  "name" : "张明",
+  "title" : "主任医师",
+  "departmentId" : 5,
+  "departmentName" : "心血管内科",
+  "bio" : "从事心血管临床工作20年，擅长冠心病、高血压、心力衰竭的诊治，在冠脉介入治疗方面有丰富经验。",
+  "specialties" : "冠心病,高血压,心力衰竭,冠脉介入",
+  "consultationFee" : 50,
+  "avatar" : null
+}, {
+  "id" : 2,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 816470400 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 816470400 ],
+  "userId" : 3,
+  "name" : "李华",
+  "title" : "副主任医师",
+  "departmentId" : 6,
+  "departmentName" : "消化内科",
+  "bio" : "消化内科专家，擅长胃肠疾病、肝病的诊断与治疗，精通胃肠镜检查及内镜下治疗。",
+  "specialties" : "胃炎,胃溃疡,肝病,胃肠镜",
+  "consultationFee" : 40,
+  "avatar" : null
+}, {
+  "id" : 3,
+  "createdAt" : [ 2026, 6, 8, 16, 6, 3, 817474400 ],
+  "updatedAt" : [ 2026, 6, 8, 16, 6, 3, 817474400 ],
+  "userId" : 4,
+  "name" : "王丽",
+  "title" : "主治医师",
+  "departmentId" : 4,
+  "departmentName" : "儿科",
+  "bio" : "儿科常见病、多发病的诊治，尤其擅长儿童呼吸系统疾病和过敏性疾病。",
+  "specialties" : "小儿感冒,肺炎,过敏,儿童保健",
+  "consultationFee" : 30,
+  "avatar" : null
+} ]
