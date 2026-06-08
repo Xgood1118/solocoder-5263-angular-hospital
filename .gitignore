@@ -64,3 +64,5 @@ logs/
 .env
 .env.local
 *.local
+.angular/
+frontend/.angular/
